@@ -1,22 +1,41 @@
 body {
     background-color: #f4f7f6;
     font-family: Arial, sans-serif;
+    margin: 0;
     padding: 20px;
+    color: #333;
 }
  
-h1 {
+h1, h2, h3, p, label {
     font-family: Arial;
 }
 
-h3 {
-    font-family: Arial;
+#chartSection {
+    max-width: 350px;       
+    margin: 20px 0;
+    background: #ffffff;    
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-p {
-    font-family: Arial;
+canvas {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
-label  {
-    font-family: Arial;
+#transactionList {
+    list-style-type: none;
+    padding: 0;
 }
 
+#transactionList li {
+    background: #fff;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
