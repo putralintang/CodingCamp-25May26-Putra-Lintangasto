@@ -1,5 +1,7 @@
 body {
-    background-color: rgb(50, 255, 50);
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
  
 h1 {
@@ -17,3 +19,4 @@ p {
 label  {
     font-family: Arial;
 }
+
