@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense and Budget Visualizer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="storageBanner" class="banner hidden"></div>
+
+    <h1>My Expense and Budget Visualizer</h1>
+
+    <section id="balanceSection">
+        <h2>Total Balance</h2>
+        <p id="Balance">Rp 0</p>
+    </section>
+
+    <section id="addTransactionSection">
+        <h2>Add Transaction</h2>
+        <form id="AddTransaction" novalidate>
+            <label for="itemName">Item Name</label>
+            <input type="text" id="itemName" name="itemName" maxlength="100" placeholder="Item Name" required>
+            <span class="error-msg" id="itemNameError"></span>
+
+            <label for="priceAmount">Amount (in Rupiah)</label>
+            <input type="number" id="priceAmount" name="priceAmount" min="0.01" max="999999999.99" placeholder="Amount" required>
+            <span class="error-msg" id="priceAmountError"></span>
+
+            <label for="Category">Category</label>
+            <select id="Category" name="Category" required>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Fun">Fun</option>
+                <option value="Others">Others</option>
+            </select>
+            <span class="error-msg" id="categoryError"></span>
+
+            <button type="submit">Add Transaction</button>
+        </form>
+    </section>
+
+    <section id="customCategorySection">
+        <h2>Add Custom Category</h2>
+        <input type="text" id="customCategoryInput" maxlength="50" placeholder="Category name">
+        <span class="error-msg" id="customCategoryError"></span>
+        <button id="addCategoryBtn">Add Category</button>
+    </section>
+
+    <section id="transactionSection">
+        <h2>Transaction List</h2>
+        <label for="sortSelect">Sort by:</label>
+        <select id="sortSelect">
+            <option value="date-desc">Date (Newest First)</option>
+            <option value="amount-desc">Amount (High to Low)</option>
+            <option value="amount-asc">Amount (Low to High)</option>
+            <option value="category-az">Category (A–Z)</option>
+        </select>
+        <ul id="transactionList"></ul>
+    </section>
+
+    <section id="chartSection">
+        <h2>Spending by Category</h2>
+        <p id="chartPlaceholder" class="hidden">Add transactions to see your spending chart.</p>
+        <canvas id="spendingChart"></canvas>
+    </section>
+
+    <section id="monthlySummarySection">
+        <h2>Monthly Summary</h2>
+        <ul id="monthlySummaryList"></ul>
+    </section>
+</body>
+</html>
